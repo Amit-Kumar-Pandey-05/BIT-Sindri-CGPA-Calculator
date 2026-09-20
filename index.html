@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIT Sindri CGPA Calculator</title>
+  <meta name="description" content="Simple BIT Sindri CGPA calculator using semester-wise SGPA and credits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow glow-one"></div>
+  <div class="bg-glow glow-two"></div>
+
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><img src="./BIT_logo.png" alt="" width="43px" height="43px"></div>
+        <div>
+          <div class="brand-title">BIT SINDRI</div>
+          <div class="brand-subtitle">CGPA PORTAL</div>
+        </div>
+      </div>
+      <span class="local-badge">100% Local • No Data Stored</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">ACADEMIC CALCULATOR</p>
+      <h1>Calculate your <span>CGPA</span> easily.</h1>
+      <p class="hero-text">
+        Select your BIT Sindri branch and enter the SGPA of the semesters you have completed.
+        Credits are automatically applied according to the selected branch.
+      </p>
+    </section>
+
+    <section class="calculator-card" aria-label="CGPA Calculator">
+      <div class="controls">
+        <div class="field">
+          <label for="branch">Branch</label>
+          <select id="branch"></select>
+        </div>
+        <div class="field">
+          <label for="batch">Batch / Admission Year</label>
+          <select id="batch">
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Semester</th>
+              <th>SGPA</th>
+              <th>Credits</th>
+            </tr>
+          </thead>
+          <tbody id="semesterRows"></tbody>
+        </table>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" id="calculateBtn">Calculate CGPA</button>
+        <button class="btn secondary" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="result" id="resultBox">
+        <div class="result-label">YOUR CGPA</div>
+        <div class="result-value" id="cgpaValue">—</div>
+        <div class="result-meta" id="resultMeta">Enter SGPA for one or more semesters.</div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-card">
+        <div class="info-icon">01</div>
+        <h3>Select Branch</h3>
+        <p>Choose your BIT Sindri branch. Semester credits update automatically.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">02</div>
+        <h3>Enter SGPA</h3>
+        <p>Fill only the semesters you have completed. Leave future semesters blank.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">03</div>
+        <h3>Get CGPA</h3>
+        <p>The calculator uses credit-weighted SGPA to calculate your cumulative GPA.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>BIT Sindri CGPA Portal</strong></p>
+      <p>Calculations happen locally in your browser. No registration number or SGPA data is uploaded.</p>
+      <p class="footer-note">Credit data can be replaced with the official Excel sheet.</p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
