@@ -17,8 +17,6 @@ Only semesters with an entered SGPA and available credit data are included.
 
 ## Important
 
-The screenshots supplied contain branch-wise credits for Semesters III and IV, plus some example values for other semesters. The project therefore does **not invent missing official credit values**.
+The official data is used and contain the complete Semester I–VIII credits for every branch.
 
-Once the official Excel sheet is supplied, the `data.js`/`script.js` data section can be updated to contain the complete Semester I–VIII credits for every branch.
-
-No backend is required. All calculations happen in the browser.
+**No backend is required. All calculations happen in the browser.**
