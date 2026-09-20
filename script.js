@@ -16,7 +16,6 @@ function populateBranches() {
 
 function getCredits() {
   const branch = branchSelect.value;
-  // Return the full 8-semester credits array for the selected branch
   return BRANCH_DATA[branch] || [0, 0, 0, 0, 0, 0, 0, 0];
 }
 
@@ -87,7 +86,12 @@ function calculateCGPA() {
   }
 
   const cgpa = weightedSum / totalCredits;
-  cgpaValue.textContent = cgpa.toFixed(3);
+
+  // Truncate cleanly to 4 decimal places without rounding up
+  const factor = Math.pow(10, 4);
+  const truncatedCgpa = (Math.floor(cgpa * factor) / factor).toFixed(4);
+
+  cgpaValue.textContent = truncatedCgpa;
   resultMeta.textContent =
     `${completed} semester${completed > 1 ? "s" : ""} included • ${totalCredits} credits`;
 }
