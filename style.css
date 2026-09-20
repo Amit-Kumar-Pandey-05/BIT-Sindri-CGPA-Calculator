@@ -89,9 +89,6 @@ body::before {
   height: 43px;
   display: grid;
   place-items: center;
-  /* border: 1px solid var(--border); */
-  /* border-radius: 12px; */
-  /* background: rgba(255,255,255,.07); */
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .5px;
@@ -204,7 +201,8 @@ select option {
 }
 
 .table-wrap {
-  overflow-x: auto;
+  width: 100%;
+  overflow-x: hidden;
   border: 1px solid var(--border);
   border-radius: 14px;
 }
@@ -212,12 +210,13 @@ select option {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 460px;
+  table-layout: fixed;
 }
 
 th,
 td {
   height: 52px;
+  padding: 0 4px;
   border-bottom: 1px solid var(--border);
   border-right: 1px solid var(--border);
   text-align: center;
@@ -256,9 +255,10 @@ td:nth-child(3) {
 }
 
 .sgpa-input {
-  width: 100px;
+  width: 100%;
+  max-width: 100px;
   height: 32px;
-  padding: 0 8px;
+  padding: 0 4px;
   text-align: center;
   background: rgba(255,255,255,.92);
   color: #10141b;
@@ -269,8 +269,8 @@ td:nth-child(3) {
 
 .credit {
   display: inline-block;
-  min-width: 50px;
-  padding: 6px 9px;
+  min-width: 40px;
+  padding: 6px 6px;
   border-radius: 6px;
   background: rgba(255,255,255,.07);
 }
@@ -398,7 +398,8 @@ footer strong {
 
 @media (max-width: 680px) {
   .page {
-    width: min(100% - 20px, 1000px);
+    width: min(100% - 16px, 1000px);
+    padding: 12px 0 24px;
   }
 
   .topbar {
@@ -410,7 +411,8 @@ footer strong {
   }
 
   .hero {
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   h1 {
@@ -423,8 +425,24 @@ footer strong {
   }
 
   .calculator-card {
-    padding: 14px;
+    padding: 12px;
     border-radius: 17px;
+  }
+
+  th, td {
+    font-size: 11px;
+    padding: 0 2px;
+  }
+
+  .sgpa-input {
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .credit {
+    min-width: 32px;
+    padding: 4px 4px;
+    font-size: 11px;
   }
 
   .actions {
